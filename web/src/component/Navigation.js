@@ -1,25 +1,78 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
 
-const Navigation = ()=> {
+import Home from './Home'
+import About from './About'
+
+const TabPanel = props => {
+  const { children, value, index, ...other } = props
+
   return(
-    <nav className={'deep-purple darken-1'}>
-      <div className={"nav-wrapper"}>
-        <ul className={'left'}>
-          <li>
-            <Link to={'/'}>
-              <a className={'white-text'}>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link to={'/about'}>
-              <a className={'white-text'}>About</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Typography
+    component="div"
+    role="tabpanel"
+    hidden={value !== index}
+    id={`simple-tabpanel-${index}`}
+    aria-labelledby={`simple-tab-${index}`}
+    {...other}
+    >
+      <Box p={3}>{children}</Box>
+    </Typography>
   )
 }
 
-export default Navigation
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+}
+
+function allyProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  }
+}
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  }
+}))
+
+export default function Navigation() {
+  const classes = useStyles()
+  const [value, setValue] = React.useState(0)
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+  }
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+          <Tab label="Home" {...allyProps(0)} />
+          <Tab label="About" {...allyProps(1)} />
+          <Tab label="Item Three" {...allyProps(2)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={value} index={0}>
+        <Home />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <About />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Item Three
+      </TabPanel>
+    </div>
+  )
+}
