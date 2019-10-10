@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -6,26 +6,52 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ReactHtmlParser from 'react-html-parser'; 
+var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
 
-export default class Accordion extends React.Component {
-
-  render() {
-    return(
-      <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          <Typography className={classes.heading}>Create new Shader</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-          create new Shader (Outline Shader) and take code from <a href="https://wiki.unity3d.com/index.php/Silhouette-Outlined_Diffuse">from here</a>
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-    )
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    flexShrink: 0,
+  },
+  code: {
+    fontFamily: "Verdana, Geneva, Tahoma, sans-serif",
+    fontSize: "10px",
+    color: "white",
+    background: "#333",
+    padding: "10px 10px 10px 10px"
   }
+}));
+
+export default function Accordion(props) {
+
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = panel => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
+  const panel = `panel${props.id}`
+  const content = md.render(props.content);
+
+  return (
+    <ExpansionPanel expanded={expanded === panel} onChange={handleChange(panel)}>
+      <ExpansionPanelSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls={`panel${props.id}bh-content`}
+        id={`panel${props.id}bh-header`}
+      >
+        <Typography className={classes.heading}>{props.header}</Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>
+        { ReactHtmlParser (content) }
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+  )
 
 }
