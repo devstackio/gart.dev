@@ -9,6 +9,7 @@ import Box from '@material-ui/core/Box'
 
 import Home from './Home'
 import About from './About'
+import UnityVR from './UnityVR'
 
 const TabPanel = props => {
   const { children, value, index, ...other } = props
@@ -33,7 +34,7 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 }
 
-function allyProps(index) {
+function getNavIndex(index) {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
@@ -59,9 +60,9 @@ export default function Navigation() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Home" {...allyProps(0)} />
-          <Tab label="About" {...allyProps(1)} />
-          <Tab label="Item Three" {...allyProps(2)} />
+          <Tab label="Home" {...getNavIndex(0)} />
+          <Tab label="About" {...getNavIndex(1)} />
+          <Tab label="Unity VR" {...getNavIndex(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -71,7 +72,7 @@ export default function Navigation() {
         <About />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <UnityVR />
       </TabPanel>
     </div>
   )
