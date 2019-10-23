@@ -7,8 +7,8 @@ import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
-import Home from './Home'
-import About from './About'
+import AboutPage from './AboutPage'
+import ReactPage from './ReactPage'
 import UnityVR from './UnityVR'
 
 const TabPanel = props => {
@@ -66,10 +66,10 @@ export default function Navigation() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Home />
+        <ReactPage />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <About />
+        <AboutPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <UnityVR />

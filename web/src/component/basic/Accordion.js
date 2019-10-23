@@ -7,6 +7,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ReactHtmlParser from 'react-html-parser'; 
+
 var MarkdownIt = require('markdown-it'),
     md = new MarkdownIt();
 
@@ -30,17 +31,17 @@ const useStyles = makeStyles(theme => ({
 export default function Accordion(props) {
 
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const { expanded, setExpanded } = props;
 
-  const handleChange = panel => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+  const handleChange = panel => {
+    setExpanded(panel);
   };
 
   const panel = `panel${props.id}`
   const content = md.render(props.content);
 
   return (
-    <ExpansionPanel expanded={expanded === panel} onChange={handleChange(panel)}>
+    <ExpansionPanel expanded={expanded === panel} onClick={() => handleChange(panel)}>
       <ExpansionPanelSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls={`panel${props.id}bh-content`}
