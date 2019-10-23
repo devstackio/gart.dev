@@ -6,10 +6,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ReactHtmlParser from 'react-html-parser'; 
-
-var MarkdownIt = require('markdown-it'),
-    md = new MarkdownIt();
+import Highlight from 'react-highlight'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,14 +28,13 @@ const useStyles = makeStyles(theme => ({
 export default function Accordion(props) {
 
   const classes = useStyles();
-  const { expanded, setExpanded } = props;
+  const { expanded, setExpanded, code, header } = props;
 
-  const handleChange = panel => {
+  const handleChange = (panel, toggle) => {
     setExpanded(panel);
   };
 
   const panel = `panel${props.id}`
-  const content = md.render(props.content);
 
   return (
     <ExpansionPanel expanded={expanded === panel} onClick={() => handleChange(panel)}>
@@ -47,10 +43,12 @@ export default function Accordion(props) {
         aria-controls={`panel${props.id}bh-content`}
         id={`panel${props.id}bh-header`}
       >
-        <Typography className={classes.heading}>{props.header}</Typography>
+        <Typography className={classes.heading}>{header}</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        { ReactHtmlParser (content) }
+        <Highlight language="javascript">
+          {code}
+        </Highlight>
       </ExpansionPanelDetails>
     </ExpansionPanel>
   )

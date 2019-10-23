@@ -9,7 +9,6 @@ import Box from '@material-ui/core/Box'
 
 import AboutPage from './AboutPage'
 import ReactPage from './ReactPage'
-import UnityVR from './UnityVR'
 
 const TabPanel = props => {
   const { children, value, index, ...other } = props
@@ -70,9 +69,6 @@ export default function Navigation() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <AboutPage />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <UnityVR />
       </TabPanel>
     </div>
   )
