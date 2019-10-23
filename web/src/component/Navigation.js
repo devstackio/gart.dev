@@ -59,9 +59,8 @@ export default function Navigation() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Home" {...getNavIndex(0)} />
+          <Tab label="React" {...getNavIndex(0)} />
           <Tab label="About" {...getNavIndex(1)} />
-          <Tab label="Unity VR" {...getNavIndex(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
