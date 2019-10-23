@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 export default function Accordion(props) {
 
   const classes = useStyles();
-  const { expanded, setExpanded, code, header } = props;
+  const { expanded, setExpanded, code, header, content } = props;
 
   const handleChange = (panel, toggle) => {
     setExpanded(panel);
@@ -46,9 +46,12 @@ export default function Accordion(props) {
         <Typography className={classes.heading}>{header}</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        <Highlight language="javascript">
-          {code}
-        </Highlight>
+        <div>
+          <Highlight language="javascript">
+            {code}
+          </Highlight>
+          {content}
+        </div>
       </ExpansionPanelDetails>
     </ExpansionPanel>
   )
