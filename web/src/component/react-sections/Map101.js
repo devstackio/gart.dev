@@ -30,17 +30,23 @@ const Map101 = () => {
       />
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
-      header = 'tt1'
+      header = 'select with dynamic options'
       content = ''
-      code = {`export function saveCourse(course) {
-        return fetch(baseUrl + (course.id || ""), {
-          method: course.id ? "PUT" : "POST", // POST for create, PUT to update when id already exists.
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(course)
-        })
-          .then(handleResponse)
-          .catch(handleError);
-      }`
+      code = {`<select
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="form-control"
+    >
+      <option value="">{defaultOption}</option>
+      {options.map(option => {
+        return (
+          <option key={option.value} value={option.value}>
+            {option.text}
+          </option>
+        );
+      })}
+    </select>`
       }
       />
 
