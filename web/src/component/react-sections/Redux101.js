@@ -179,6 +179,20 @@ render(
         `}
       />
 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+      header = 'multiple actions for mapDispatchToProps'
+      content = ''
+      code = {`function mapDispatchToProps(dispatch) {
+        return {
+          actions: {
+            loadCourses: bindActionCreators(courseActions.loadCourses, dispatch),
+            loadAuthors: bindActionCreators(authorActions.loadAuthors, dispatch)
+          }
+        }
+      }
+        `}
+      />
+
       {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'redux/configureStore.js'
       content = 'redux-immutable-state-invariant will throw error if trying to modify state in reducer, intended for dev use only'
