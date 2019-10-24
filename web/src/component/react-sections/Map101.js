@@ -8,7 +8,7 @@ const Map101 = () => {
 
   return (
     <>
-      <h3>Map 101</h3>
+      <h3>.map 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'mapping referenced data in mapStateToProps(state)'
       content = 'courses are mapped with response data normally, with an added "authorName" parameter that stores authorNames by id'
@@ -50,25 +50,9 @@ const Map101 = () => {
       }
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="3" 
+      {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'tt1'
       content = ''
-      code = {`export async function handleResponse(response) {
-        if (response.ok) return response.json();
-        if (response.status === 400) {
-          // So, a server-side validation error occurred.
-          // Server side validation returns a string error message, so parse as text instead of json.
-          const error = await response.text();
-          throw new Error(error);
-        }
-        throw new Error("Network response was not ok.");
-      }
-        `}
-      />
-
-      {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'redux/configureStore.js'
-      content = 'redux-immutable-state-invariant will throw error if trying to modify state in reducer, intended for dev use only'
       code = {`
         `}
       /> */}

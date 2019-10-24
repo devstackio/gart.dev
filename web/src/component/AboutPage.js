@@ -5,7 +5,7 @@ const AboutPage = () => {
     <>
       <h1>About</h1>
       <p>
-        Project used as reference when working in React.
+        Collection of notes for use as reference when working in React.
       </p>
     </>
   )

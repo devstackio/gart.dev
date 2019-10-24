@@ -8,7 +8,7 @@ const Redux101 = () => {
 
   return (
     <>
-      <h3>Redux 101</h3>
+      <h3>redux 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'redux/configureStore.js'
       content = {`redux-immutable-state-invariant will throw error if trying to modify state in reducer, intended for dev use only
@@ -163,7 +163,7 @@ render(
         `}
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="8" 
       header = 'when adding a new Reducer : reducers/index.js'
       content = ''
       code = {`import { combineReducers } from 'redux';
@@ -179,7 +179,7 @@ render(
         `}
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="9" 
       header = 'multiple actions for mapDispatchToProps'
       content = ''
       code = {`function mapDispatchToProps(dispatch) {
@@ -193,7 +193,7 @@ render(
         `}
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="10" 
       header = 'defining an initialState : reducers/initialState.js'
       content = 'centralized place for developers to see initial state'
       code = {`export default {

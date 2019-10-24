@@ -2,22 +2,20 @@ import React from 'react';
 
 import Accordion from 'component/basic/Accordion'
 
-const UseEffect101 = () => {
+const UseState101 = () => {
 
   const [ expanded, setExpanded ] = React.useState(false);
 
   return (
     <>
-      <h3>useEffect 101 ( React Hooks )</h3>
+      <h3>useState 101 ( React Hooks )</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'componentDidMount'
-      content = 'the empty array passed to useEffect is the lifecycles it will run in, empty is equivalent to onComponentDidMount'
-      code = {`import React, { useEffect } from 'react';
+      header = 'basic'
+      content = 'sets "course" param into state with a setter, and a default initial value'
+      code = {`import React, { useState } from 'react';
       
-      function ManageCoursePage(props) {
-        useEffect( () => {
-          // some code
-        }, [])
+      function someComponent(props) {
+        const [ course, setCourse ] = useState("defaultValue");
         `}
       />
 
@@ -33,4 +31,4 @@ const UseEffect101 = () => {
   )
 }
 
-export default UseEffect101;
+export default UseState101;

@@ -8,7 +8,7 @@ const Thunk101 = () => {
 
   return (
     <>
-      <h3>Thunk 101</h3>
+      <h3>redux-thunk 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'redux/configureStore.js'
       content = ''
@@ -88,95 +88,9 @@ const Thunk101 = () => {
         `}
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="6" 
-      header = 'tt1'
-      content = ''
-      code = {`import configureStore from './redux/configureStore';
-import { Provider as ReduxProvider } from 'react-redux';
-
-const store = configureStore();
-
-render(
-  <ReduxProvider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </ReduxProvider>, 
-  document.getElementById("app"));
-        `}
-      />
-
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="7" 
-      header = 'tt1'
-      content = ''
-      code = {`import React from 'react';
-      import { connect } from 'react-redux';
-      import { bindActionCreators } from 'redux';
-      import * as componentActions from '../../redux/actions/componentActions';
-      
-      class SomeComponent extends React.Component {
-        constructor(props) {
-          super(props);
-      
-          this.state = {
-            course: {
-              title: ""
-            }
-          }
-      
-        }
-      
-        handleChange = event => {
-          const course = { ...this.state.course, title: event.target.value};
-          this.setState({ course });
-        };
-      
-        handleSubmit = event => {
-          event.preventDefault();
-          this.props.actions.someAction(this.state.course);
-        }
-        render() {
-          return (
-            <form onSubmit={this.handleSubmit}>
-              <h2>Courses</h2>
-              <h3>Add Course</h3>
-              <input 
-                type="text" 
-                onChange={this.handleChange} 
-                value={this.state.course.title} />
-              <input type="submit" value="Save" />
-              { this.props.courses.map(course => (
-                <div key={course.title}>{course.title}</div>
-              ))}
-            </form>
-          )
-        }
-      }
-      
-      CoursesPage.propTypes = {
-        actions: PropTypes.object.isRequired,
-        courses: PropTypes.array.isRequired
-      }
-      
-      function mapStateToProps(state) {
-        return {
-          courses: state.courses
-        };
-      }
-      
-      function mapDispatchToProps(dispatch) {
-        return {
-          actions: bindActionCreators(componentActions, dispatch)
-        }
-      }
-      
-      export default connect(mapStateToProps, mapDispatchToProps)(SomeComponent);
-        `}
-      />
-
       {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'redux/configureStore.js'
-      content = 'redux-immutable-state-invariant will throw error if trying to modify state in reducer, intended for dev use only'
+      header = 'tt1'
+      content = ''
       code = {`
         `}
       /> */}

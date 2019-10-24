@@ -8,7 +8,7 @@ const Fetch101 = () => {
 
   return (
     <>
-      <h3>Fetch 101</h3>
+      <h3>fetch 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'basic'
       content = ''
