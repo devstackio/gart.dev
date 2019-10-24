@@ -163,6 +163,22 @@ render(
         `}
       />
 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+      header = 'when adding a new Reducer : reducers/index.js'
+      content = ''
+      code = {`import { combineReducers } from 'redux';
+      import courses from './courseReducer';
+      import authors from './authorReducer';
+      
+      const rootReducer = combineReducers({
+        courses,
+        authors
+      });
+      
+      export default rootReducer;
+        `}
+      />
+
       {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'redux/configureStore.js'
       content = 'redux-immutable-state-invariant will throw error if trying to modify state in reducer, intended for dev use only'
