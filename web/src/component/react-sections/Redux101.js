@@ -193,6 +193,22 @@ render(
         `}
       />
 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+      header = 'defining an initialState : reducers/initialState.js'
+      content = 'centralized place for developers to see initial state'
+      code = {`export default {
+        courses: [],
+        authors: []
+      }
+
+      // in reducers/someReducer.js ::
+      import initialState from './initialState';
+
+      export default function authorReducer(state = initialState.authors, action) {
+        ...
+        `}
+      />
+
       {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'redux/configureStore.js'
       content = 'redux-immutable-state-invariant will throw error if trying to modify state in reducer, intended for dev use only'
