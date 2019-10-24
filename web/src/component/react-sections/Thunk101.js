@@ -11,7 +11,8 @@ const Thunk101 = () => {
       <h3>Thunk 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'redux/configureStore.js'
-      content = {`import { createStore, applyMiddleware, compose } from 'redux';
+      content = ''
+      code = {`import { createStore, applyMiddleware, compose } from 'redux';
       import rootReducer from './reducers';
       import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
       import thunk from 'redux-thunk';

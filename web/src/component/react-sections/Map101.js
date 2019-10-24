@@ -2,26 +2,35 @@ import React from 'react';
 
 import Accordion from 'component/basic/Accordion'
 
-const Fetch101 = () => {
+const Map101 = () => {
 
   const [ expanded, setExpanded ] = React.useState(false);
 
   return (
     <>
-      <h3>Fetch 101</h3>
+      <h3>Map 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'basic'
-      content = ''
-      code = {`export function getCourses() {
-        return fetch("http://localhost:3001/courses/")
-          .then(handleResponse)
-          .catch(handleError);
+      header = 'mapping referenced data in mapStateToProps(state)'
+      content = 'courses are mapped with response data normally, with an added "authorName" parameter that stores authorNames by id'
+      code = {`function mapStateToProps(state) {
+        return {
+          courses: 
+            state.authors.length === 0
+              ? []
+              : state.courses.map(course => {
+                return {
+                  ...course,
+                  authorName: state.authors.find(a => a.id === course.authorId).name
+                }
+          }),
+          authors: state.authors
+        };
       }
         `}
       />
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
-      header = 'params'
+      header = 'tt1'
       content = ''
       code = {`export function saveCourse(course) {
         return fetch(baseUrl + (course.id || ""), {
@@ -36,7 +45,7 @@ const Fetch101 = () => {
       />
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="3" 
-      header = 'handleResponse'
+      header = 'tt1'
       content = ''
       code = {`export async function handleResponse(response) {
         if (response.ok) return response.json();
@@ -63,4 +72,4 @@ const Fetch101 = () => {
   )
 }
 
-export default Fetch101;
+export default Map101;
