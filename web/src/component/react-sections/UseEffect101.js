@@ -11,7 +11,8 @@ const UseEffect101 = () => {
       <h3>useEffect 101 ( React Hooks )</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'componentDidMount'
-      content = 'the empty array passed to useEffect is the lifecycles it will run in, empty is equivalent to onComponentDidMount'
+      content = 'the empty array passed to useEffect is the lifecycles it will run in, empty is equivalent to onComponentDidMount,
+      we can pass i.e. "props.someParam" so that this will get called anytime props.someParam is modified'
       code = {`import React, { useEffect } from 'react';
       
       function ManageCoursePage(props) {
