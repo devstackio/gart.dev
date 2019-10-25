@@ -26,14 +26,15 @@ const Redirects101 = () => {
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
       header = 'using history'
-      content = 'history is automatically passed into props if using a <Route></Route>'
+      content = 'history is automatically passed into props if component is loaded via a <Route></Route>'
       code = {`const { history } = props;
       ...
       function handleSave(event) {
         event.preventDefault();
         saveCourse(course)
         .then( () => {
-          history.pushState('/courses');
+          history.push('/courses');
+          // history.pushState was deprecated
         });
       }
         `}
