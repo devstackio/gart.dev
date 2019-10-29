@@ -36,7 +36,7 @@ const Fetch101 = () => {
       />
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="3" 
-      header = 'handleResponse'
+      header = 'handleResponse : async / await example'
       content = ''
       code = {`export async function handleResponse(response) {
         if (response.ok) return response.json();

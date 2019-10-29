@@ -9,6 +9,7 @@ import Box from '@material-ui/core/Box'
 
 import AboutPage from './AboutPage'
 import ReactPage from './ReactPage'
+import KotlinPage from './KotlinPage'
 
 const TabPanel = props => {
   const { children, value, index, ...other } = props
@@ -60,13 +61,17 @@ export default function Navigation() {
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="React" {...getNavIndex(0)} />
-          <Tab label="About" {...getNavIndex(1)} />
+          <Tab label="Kotlin" {...getNavIndex(1)} />
+          <Tab label="About" {...getNavIndex(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         <ReactPage />
       </TabPanel>
       <TabPanel value={value} index={1}>
+        <KotlinPage />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
         <AboutPage />
       </TabPanel>
     </div>

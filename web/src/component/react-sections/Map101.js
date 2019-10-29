@@ -30,7 +30,7 @@ const Map101 = () => {
       />
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
-      header = 'select with dynamic options'
+      header = '<select> with mapped options'
       content = ''
       code = {`<select
       name={name}
