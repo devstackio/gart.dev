@@ -25,11 +25,34 @@ const Classes101 = () => {
         var weight = weight
       }
 
-      // declare and initialize properties in primary constructor
+      // declare and initialize properties in primary constructor, single line class definition
 
-      class Person(val name: String, var weight: Double) {
-        
-      })
+      class Person(val name: String, var weight: Double))
+        `}
+      />
+
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
+      header = 'initializer block'
+      content = 'always runs during construction, function keyword is "init"'
+      code = {`
+      class SomeClass {
+
+        init {
+          initializeThings()
+        }
+
+        private fun initializeThings() {
+          ...
+        }
+
+      }
+        `}
+      />
+
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
+      header = 'secondary constructor'
+      content = 'runs only when used, can have multiple secondary constructors, runs after initializer blocks'
+      code = {`
         `}
       />
 
