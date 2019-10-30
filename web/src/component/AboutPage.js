@@ -5,7 +5,7 @@ const AboutPage = () => {
     <>
       <h1>About</h1>
       <p>
-        Collection of notes for use as reference when working in React.
+        Collection of notes for use as reference when developing in React or Android (Updated with Kotlin).
       </p>
     </>
   )
