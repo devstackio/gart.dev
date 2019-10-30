@@ -13,7 +13,7 @@ import UseState101 from 'component/react-sections/UseState101'
 const ReactPage = () => {
 
   return (
-    <>
+    <div class="content">
       <h1>React</h1>
       <Destructuring101 />
       <Fetch101 />
@@ -24,7 +24,7 @@ const ReactPage = () => {
       <Thunk101 />
       <UseEffect101 />
       <UseState101 />
-    </>
+    </div>
   )
 }
 
