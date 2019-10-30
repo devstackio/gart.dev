@@ -11,7 +11,7 @@ const UrlParams101 = () => {
       <h3>Route 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'basic : App.js'
-      content = ''
+      content = 'npm i react-router-dom --save'
       code = {`import React from 'react';
       import { Route, Switch } from 'react-router-dom';
       import Header from './common/Header';
