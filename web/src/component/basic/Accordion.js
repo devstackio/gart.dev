@@ -28,16 +28,10 @@ const useStyles = makeStyles(theme => ({
 export default function Accordion(props) {
 
   const classes = useStyles();
-  const { expanded, setExpanded, code, header, content } = props;
-
-  const handleChange = (panel, toggle) => {
-    setExpanded(panel);
-  };
-
-  const panel = `panel${props.id}`
+  const { code, header, content } = props;
 
   return (
-    <ExpansionPanel expanded={expanded === panel} onClick={() => handleChange(panel)}>
+    <ExpansionPanel>
       <ExpansionPanelSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls={`panel${props.id}bh-content`}
@@ -47,10 +41,11 @@ export default function Accordion(props) {
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <div>
-          <Highlight language="javascript">
+          {code && (<Highlight language="javascript">
             {code}
-          </Highlight>
+          </Highlight>)}
           {content}
+          {props.children}
         </div>
       </ExpansionPanelDetails>
     </ExpansionPanel>
