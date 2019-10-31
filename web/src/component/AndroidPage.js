@@ -6,7 +6,7 @@ import Classes101 from 'component/android-sections/kotlin/Classes101'
 import Functions101 from 'component/android-sections/kotlin/Functions101'
 import ObjectAndData101 from 'component/android-sections/kotlin/ObjectAndData101'
 import ActivitiesAndIntents101 from 'component/android-sections/general/ActivitiesAndIntents101'
-import ErrorHandling101 from 'component/android-sections/general/ErrorHandling101'
+import ErrorHandling101 from 'component/android-sections/kotlin/ErrorHandling101'
 
 const AndroidPage = () => {
 
