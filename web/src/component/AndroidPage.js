@@ -6,6 +6,7 @@ import Classes101 from 'component/android-sections/kotlin/Classes101'
 import Functions101 from 'component/android-sections/kotlin/Functions101'
 import ObjectAndData101 from 'component/android-sections/kotlin/ObjectAndData101'
 import ActivitiesAndIntents101 from 'component/android-sections/general/ActivitiesAndIntents101'
+import ErrorHandling101 from 'component/android-sections/general/ErrorHandling101'
 
 const AndroidPage = () => {
 
@@ -24,6 +25,7 @@ const AndroidPage = () => {
         <Classes101 />
         <Functions101 />
         <ObjectAndData101 />
+        <ErrorHandling101 />
       </Accordion>
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
