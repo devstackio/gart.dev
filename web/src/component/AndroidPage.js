@@ -7,6 +7,7 @@ import Functions101 from 'component/android-sections/kotlin/Functions101'
 import ObjectAndData101 from 'component/android-sections/kotlin/ObjectAndData101'
 import ActivitiesAndIntents101 from 'component/android-sections/general/ActivitiesAndIntents101'
 import ErrorHandling101 from 'component/android-sections/kotlin/ErrorHandling101'
+import ClickHandlers101 from 'component/android-sections/general/ClickHandlers101'
 
 const AndroidPage = () => {
 
@@ -34,6 +35,7 @@ const AndroidPage = () => {
       code = ''
       >
         <ActivitiesAndIntents101 />
+        <ClickHandlers101 />
       </Accordion>
     </div>
   )
