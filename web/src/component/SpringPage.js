@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Accordion from 'component/basic/Accordion'
-import ConfigServer101 from 'component/spring-sections/cloud/ConfigServer101'
+import JPACrud101 from 'component/spring-sections/cloud/JPACrud101'
 
 const SpringPage = () => {
 
@@ -12,11 +12,11 @@ const SpringPage = () => {
       <h1>Spring Development</h1>
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'Spring Cloud'
+      header = 'Spring boot : JPA CRUD with postgresql'
       content = ''
       code = ''
       >
-        <ConfigServer101 />
+        <JPACrud101 />
         
       </Accordion>
     </div>
