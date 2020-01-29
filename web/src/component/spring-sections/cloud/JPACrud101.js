@@ -9,7 +9,42 @@ const JPACrud101 = () => {
   return (
     <>
       <h3>JPACrud 101</h3>
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="1"
+      header = 'build.gradle'
+      content = ''
+      code = {`
+      plugins {
+        id 'org.springframework.boot' version '2.2.4.RELEASE'
+        id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+        id 'java'
+      }
+      
+      group = 'dev.gart'
+      version = '0.0.1-SNAPSHOT'
+      sourceCompatibility = '1.8'
+      
+      repositories {
+        mavenCentral()
+      }
+      
+      dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        runtimeOnly 'org.postgresql:postgresql'
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+          exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+      }
+      
+      test {
+        useJUnitPlatform()
+      }
+      
+      `}
+      />
+
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
       header = 'application.properties'
       content = 'postgres version : 9.6, database name : dev'
       code = {`---
@@ -21,7 +56,7 @@ spring.datasource.driver-class-name=org.postgresql.Driver
         `}
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="3" 
       header = 'devtable model'
       content = 'devtable table has 3 columns id (primary key) username ( character varying ) and password ( character varying )'
       code = {`
@@ -44,7 +79,7 @@ public class Devtable implements Serializable {
         `}
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="3" 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="4" 
         header = 'DevtableRepository'
         content = 'extends from JpaRepository to inherit default CRUD methods'
         code = {`
@@ -60,7 +95,7 @@ public interface DevtableRepository extends JpaRepository<Devtable, Long> {
           `}
       />
 
-      <Accordion expanded={expanded} setExpanded={setExpanded} id="4" 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="5" 
               header = 'DevtableController'
               content = 'controller... usually put a service in here as autowired and call repository through service...'
               code = {`

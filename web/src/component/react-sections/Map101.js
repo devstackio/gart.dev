@@ -50,12 +50,21 @@ const Map101 = () => {
       }
       />
 
-      {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'tt1'
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="3" 
+      header = 'basic jsx map'
       content = ''
       code = {`
+      function render() {
+        return (
+          <ul>
+            {this.props.items.map(function(item) {
+              return <li key={item.id}>{item.name}</li>
+            })}
+          </ul>
+        );
+      }
         `}
-      /> */}
+      />
 
       
     </>
