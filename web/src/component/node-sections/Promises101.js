@@ -26,7 +26,7 @@ const Promises101 = () => {
       />
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'chain'
+      header = 'chaining'
       content = ''
       code = {`const getData = new Promise((resolve, reject) => {
         someFunctionThatTakesAWhile() => {
@@ -36,7 +36,13 @@ const Promises101 = () => {
         })
       })
       .then(() => {
-        console.log('runs second...')
+        return new Promise((resolve, reject) => {
+          anotherFunctionThatTakesTime() => {
+            let moreData = []
+            console.log('data received... tell chain to keep moving')
+            resolve(moreData)
+          }
+        })
       })
     
       getData.then(() => {
