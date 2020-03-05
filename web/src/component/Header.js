@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 
-const nav = ['/','/android','/react','/spring']
+const nav = ['/','/android','/node','/react','/spring']
 
 class Header extends React.Component {
 
@@ -21,6 +21,7 @@ class Header extends React.Component {
             <Tabs onChange={(event, newValue) => { this.setState( { redirect: nav[newValue]})}} aria-label="simple tabs example">
               <Tab label="About"  />
               <Tab label="Android" />
+              <Tab label="Node" />
               <Tab label="React" />
               <Tab label="Spring" />
             </Tabs>
