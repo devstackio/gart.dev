@@ -8,4 +8,5 @@ npm start
 ```
 
 ## deploy web app
+`npm run build`
 `firebase deploy`
