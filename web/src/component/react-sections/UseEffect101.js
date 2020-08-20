@@ -22,7 +22,19 @@ const UseEffect101 = () => {
         `}
       />
 
-      {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
+      <Accordion expanded={expanded} setExpanded={setExpanded} id="2" 
+      header = 'useEffect run once'
+      content = 'quick way to make sure useEffect runs only once as an init method'
+      code = {`
+      const useEffectOnce = (func) => useEffect( func, [] )
+
+      useEffectOnce( () => {
+        //will only run once
+      })
+        `}
+      />
+
+      {/* <Accordion expanded={expanded} setExpanded={setExpanded} id="3" 
       header = 'tt1'
       content = ''
       code = {`
