@@ -10,12 +10,16 @@ const UseState101 = () => {
     <>
       <h3>useState 101 ( React Hooks )</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'basic'
+      header = 'useState'
       content = 'sets "course" param into state with a setter, and a default initial value'
-      code = {`import React, { useState } from 'react';
+      code = {`
+import React, { useState } from 'react';
       
-      function someComponent(props) {
-        const [ course, setCourse ] = useState("defaultValue");
+const someComponent = props => {
+
+  const [ course, setCourse ] = useState( "defaultValue" )
+
+}
         `}
       />
 
