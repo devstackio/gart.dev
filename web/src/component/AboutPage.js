@@ -17,21 +17,21 @@ const AboutPage = () => {
       header = 'npm'
       content = ''
       code = {`
-      create personal access token via github settings
-      give write:packages, read:packages, repo priviledges
-      -> store token
-      
-      ### publishing npm package
-      set package name to "@repo-owner/repo-name"
-      // make sure repo-name is different from it's github repo name
-      npm login --scope @repo-owner --registry https://npm.pkg.github.com
-      npm publish
-      
-      // can check if package is visible with
-      npm view @repo-owner/repo-name
-      
-      // installing
-      npm i @repo-owner/repo-name
+create personal access token via github settings
+give write:packages, read:packages, repo priviledges
+-> store token
+
+### publishing npm package
+set package name to "@repo-owner/repo-name"
+// make sure repo-name is different from it's github repo name
+npm login --scope @repo-owner --registry https://npm.pkg.github.com
+npm publish
+
+// can check if package is visible with
+npm view @repo-owner/repo-name
+
+// installing
+npm i @repo-owner/repo-name
         `}
       />
 
