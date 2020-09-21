@@ -10,6 +10,7 @@ npm start
 ```
 
 ## deploy web app
+- cd into `/web` dir
 `npm run build`
 `firebase deploy`
 
