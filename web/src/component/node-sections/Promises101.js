@@ -8,11 +8,20 @@ const Promises101 = () => {
 
   return (
     <>
-      <h3>Promises 101</h3>
+      <h3>Promises / Async 101</h3>
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
       header = 'basic'
       content = ''
-      code = {`const getData = new Promise((resolve, reject) => {
+      code = {`// async
+      const getData = async() => {
+        return 'someData'
+      }
+
+      let data = await getData()
+      // do something with data
+      
+      // promises
+      const getData = new Promise((resolve, reject) => {
         someFunctionThatTakesAWhile() => {
           let someData = []
           resolve(someData)
@@ -26,7 +35,7 @@ const Promises101 = () => {
       />
 
       <Accordion expanded={expanded} setExpanded={setExpanded} id="1" 
-      header = 'chaining'
+      header = 'chaining promises'
       content = ''
       code = {`const getData = new Promise((resolve, reject) => {
         someFunctionThatTakesAWhile() => {
